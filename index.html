@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Juice Shop - Premium Fruit Juices</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-leaf"></i>
+                <span>FreshJuice</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-login" onclick="openLogin()">Login</button>
+                <button class="btn-cart" onclick="openCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Fresh <span class="highlight">Fruit Juices</span><br>
+                    For Healthy Living
+                </h1>
+                <p class="hero-description">
+                    Experience the pure taste of nature with our premium selection of freshly squeezed fruit juices. 
+                    Made from the finest ingredients, delivered to your doorstep.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToMenu()">
+                        Order Now
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn-secondary" onclick="scrollToAbout()">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="juice-bottles">
+                    <div class="bottle bottle-1">
+                        <div class="bottle-content orange"></div>
+                        <div class="bottle-label">Orange</div>
+                    </div>
+                    <div class="bottle bottle-2">
+                        <div class="bottle-content apple"></div>
+                        <div class="bottle-label">Apple</div>
+                    </div>
+                    <div class="bottle bottle-3">
+                        <div class="bottle-content grape"></div>
+                        <div class="bottle-label">Grape</div>
+                    </div>
+                </div>
+                <div class="floating-elements">
+                    <div class="fruit fruit-1">🍊</div>
+                    <div class="fruit fruit-2">🍎</div>
+                    <div class="fruit fruit-3">🍇</div>
+                    <div class="fruit fruit-4">🍓</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Fresh Menu</h2>
+                <p class="section-description">Choose from our wide variety of premium fruit juices</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item" data-category="citrus">
+                    <div class="menu-image">
+                        <div class="juice-glass orange-juice"></div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Orange Delight</h3>
+                        <p>Freshly squeezed orange juice with natural sweetness</p>
+                        <div class="menu-price">$4.99</div>
+                        <button class="btn-add-cart" onclick="addToCart('Orange Delight', 4.99)">
+                            <i class="fas fa-plus"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="citrus">
+                    <div class="menu-image">
+                        <div class="juice-glass lemon-juice"></div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Lemon Zest</h3>
+                        <p>Refreshing lemon juice with a tangy twist</p>
+                        <div class="menu-price">$3.99</div>
+                        <button class="btn-add-cart" onclick="addToCart('Lemon Zest', 3.99)">
+                            <i class="fas fa-plus"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="tropical">
+                    <div class="menu-image">
+                        <div class="juice-glass mango-juice"></div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Mango Paradise</h3>
+                        <p>Sweet and creamy mango juice from tropical fruits</p>
+                        <div class="menu-price">$5.99</div>
+                        <button class="btn-add-cart" onclick="addToCart('Mango Paradise', 5.99)">
+                            <i class="fas fa-plus"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="berry">
+                    <div class="menu-image">
+                        <div class="juice-glass strawberry-juice"></div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Strawberry Bliss</h3>
+                        <p>Sweet and tangy strawberry juice bursting with flavor</p>
+                        <div class="menu-price">$4.49</div>
+                        <button class="btn-add-cart" onclick="addToCart('Strawberry Bliss', 4.49)">
+                            <i class="fas fa-plus"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="citrus">
+                    <div class="menu-image">
+                        <div class="juice-glass grapefruit-juice"></div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Grapefruit Fresh</h3>
+                        <p>Bitter-sweet grapefruit juice for a healthy start</p>
+                        <div class="menu-price">$4.29</div>
+                        <button class="btn-add-cart" onclick="addToCart('Grapefruit Fresh', 4.29)">
+                            <i class="fas fa-plus"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="tropical">
+                    <div class="menu-image">
+                        <div class="juice-glass pineapple-juice"></div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Pineapple Punch</h3>
+                        <p>Tropical pineapple juice with exotic flavors</p>
+                        <div class="menu-price">$4.79</div>
+                        <button class="btn-add-cart" onclick="addToCart('Pineapple Punch', 4.79)">
+                            <i class="fas fa-plus"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Why Choose FreshJuice?</h2>
+                    <p>We believe in delivering the purest, most nutritious fruit juices straight from nature. Our commitment to quality ensures every sip is packed with vitamins and natural goodness.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <h4>100% Natural</h4>
+                            <p>No artificial preservatives or additives</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-truck"></i>
+                            <h4>Fresh Delivery</h4>
+                            <p>Delivered within 24 hours of preparation</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-heart"></i>
+                            <h4>Healthy Choice</h4>
+                            <p>Packed with essential vitamins and minerals</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="juice-process">
+                        <div class="process-step">
+                            <i class="fas fa-seedling"></i>
+                            <span>Fresh Fruits</span>
+                        </div>
+                        <div class="process-step">
+                            <i class="fas fa-blender"></i>
+                            <span>Cold Pressed</span>
+                        </div>
+                        <div class="process-step">
+                            <i class="fas fa-bottle-water"></i>
+                            <span>Bottled Fresh</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-description">We'd love to hear from you</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Address</h4>
+                        <p>No.42, Vel Tech Road, Vel Nagar, Avadi, New Vellanur, Tamil Nadu 600062</p>
+                        <a href="https://www.google.com/maps/dir//No.42,+Vel+Tech+Road,+Vel+Nagar,+Avadi,+New+Vellanur,+Tamil+Nadu+600062/@13.1704329,80.1099174,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a527d5347196fe9:0x3dd73790750218bf!2m2!1d80.0999202!2d13.1676486?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            View on Google Maps
+                        </a>
+                    </div>
+                </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>8978934338</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>vamsivardhan518@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+            
+            <!-- Google Maps Embed -->
+            <div class="map-container">
+                <h3>Find Us on the Map</h3>
+                <div class="map-wrapper">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1234567890!2d80.0999202!3d13.1676486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a527d5347196fe9%3A0x3dd73790750218bf!2sNo.42%2C%20Vel%20Tech%20Road%2C%20Vel%20Nagar%2C%20Avadi%2C%20New%20Vellanur%2C%20Tamil%20Nadu%20600062!5e0!3m2!1sen!2sin!4v1703123456789!5m2!1sen!2sin"
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Fresh Juice Shop Location">
+                    </iframe>
+                </div>
+                <div class="map-info">
+                    <p><i class="fas fa-info-circle"></i> Click on the map to get directions or view in full screen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>FreshJuice</span>
+                    </div>
+                    <p>Delivering fresh, healthy fruit juices to your doorstep.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Citrus Juices</a></li>
+                        <li><a href="#">Tropical Juices</a></li>
+                        <li><a href="#">Berry Juices</a></li>
+                        <li><a href="#">Mixed Juices</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get updates on new flavors and offers.</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FreshJuice. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Welcome Back</h2>
+                <span class="close" onclick="closeLogin()">&times;</span>
+            </div>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn-login-submit">Login</button>
+                <div class="login-divider">
+                    <span>Or</span>
+                </div>
+                <div class="social-login">
+                    <button type="button" class="btn-social google">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                    <button type="button" class="btn-social facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        Continue with Facebook
+                    </button>
+                </div>
+                <p class="signup-link">
+                    Don't have an account? <a href="#" onclick="openSignup()">Sign up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create Account</h2>
+                <span class="close" onclick="closeSignup()">&times;</span>
+            </div>
+            <form class="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox" required>
+                        <span class="checkmark"></span>
+                        I agree to the <a href="#">Terms & Conditions</a>
+                    </label>
+                </div>
+                <button type="submit" class="btn-signup-submit">Create Account</button>
+                <p class="login-link">
+                    Already have an account? <a href="#" onclick="openLogin()">Login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <div class="modal-header">
+                <h2>Shopping Cart</h2>
+                <span class="close" onclick="closeCart()">&times;</span>
+            </div>
+            <div class="cart-content">
+                <div class="cart-items" id="cartItems">
+                    <!-- Cart items will be dynamically added here -->
+                </div>
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Delivery Fee:</span>
+                        <span id="deliveryFee">$2.99</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax:</span>
+                        <span id="tax">$0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total">$0.00</span>
+                    </div>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn-secondary" onclick="closeCart()">Continue Shopping</button>
+                    <button class="btn-primary" onclick="proceedToCheckout()" id="checkoutBtn" disabled>
+                        Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content checkout-modal-content">
+            <div class="modal-header">
+                <h2>Checkout</h2>
+                <span class="close" onclick="closeCheckout()">&times;</span>
+            </div>
+            <div class="checkout-content">
+                <div class="checkout-steps">
+                    <div class="step active" data-step="1">
+                        <span class="step-number">1</span>
+                        <span class="step-title">Delivery Info</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <span class="step-number">2</span>
+                        <span class="step-title">Payment</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <span class="step-number">3</span>
+                        <span class="step-title">Confirmation</span>
+                    </div>
+                </div>
+
+                <!-- Step 1: Delivery Information -->
+                <div class="checkout-step" id="step1">
+                    <h3>Delivery Information</h3>
+                    <form class="delivery-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" placeholder="Enter first name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" placeholder="Enter last name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="checkoutEmail" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="Enter phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Delivery Address</label>
+                            <textarea id="address" placeholder="Enter full delivery address" rows="3" required></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" placeholder="Enter city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="zipCode">ZIP Code</label>
+                                <input type="text" id="zipCode" placeholder="Enter ZIP code" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="deliveryTime">Preferred Delivery Time</label>
+                            <select id="deliveryTime" required>
+                                <option value="">Select delivery time</option>
+                                <option value="asap">ASAP (30-45 mins)</option>
+                                <option value="1hour">Within 1 hour</option>
+                                <option value="2hours">Within 2 hours</option>
+                                <option value="specific">Schedule specific time</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="specialInstructions">Special Instructions</label>
+                            <textarea id="specialInstructions" placeholder="Any special delivery instructions?" rows="2"></textarea>
+                        </div>
+                        <button type="button" class="btn-primary" onclick="nextStep(2)">Continue to Payment</button>
+                    </form>
+                </div>
+
+                <!-- Step 2: Payment -->
+                <div class="checkout-step" id="step2" style="display: none;">
+                    <h3>Payment Method</h3>
+                    <div class="payment-methods">
+                        <div class="payment-option">
+                            <input type="radio" id="cardPayment" name="paymentMethod" value="card" checked>
+                            <label for="cardPayment" class="payment-label">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Credit/Debit Card</span>
+                            </label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="paypalPayment" name="paymentMethod" value="paypal">
+                            <label for="paypalPayment" class="payment-label">
+                                <i class="fab fa-paypal"></i>
+                                <span>PayPal</span>
+                            </label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="cashPayment" name="paymentMethod" value="cash">
+                            <label for="cashPayment" class="payment-label">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Cash on Delivery</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-details" id="cardDetails">
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number</label>
+                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiryDate">Expiry Date</label>
+                                <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" placeholder="123" maxlength="3">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cardName">Name on Card</label>
+                            <input type="text" id="cardName" placeholder="Enter name as it appears on card">
+                        </div>
+                    </div>
+
+                    <div class="order-summary">
+                        <h4>Order Summary</h4>
+                        <div class="order-items" id="orderItems">
+                            <!-- Order items will be populated here -->
+                        </div>
+                        <div class="order-totals">
+                            <div class="summary-row">
+                                <span>Subtotal:</span>
+                                <span id="orderSubtotal">$0.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Delivery Fee:</span>
+                                <span id="orderDeliveryFee">$2.99</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tax:</span>
+                                <span id="orderTax">$0.00</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total:</span>
+                                <span id="orderTotal">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-actions">
+                        <button type="button" class="btn-secondary" onclick="prevStep(1)">Back</button>
+                        <button type="button" class="btn-primary" onclick="processPayment()">Place Order</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Confirmation -->
+                <div class="checkout-step" id="step3" style="display: none;">
+                    <div class="confirmation-content">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Order Confirmed!</h3>
+                        <p>Thank you for your order. We'll start preparing your fresh juices right away!</p>
+                        <div class="order-details">
+                            <div class="detail-row">
+                                <span>Order Number:</span>
+                                <span id="orderNumber">#FJ-2024-001</span>
+                            </div>
+                            <div class="detail-row">
+                                <span>Estimated Delivery:</span>
+                                <span id="estimatedDelivery">30-45 minutes</span>
+                            </div>
+                            <div class="detail-row">
+                                <span>Total Amount:</span>
+                                <span id="finalTotal">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="confirmation-actions">
+                            <button type="button" class="btn-secondary" onclick="closeCheckout()">Close</button>
+                            <button type="button" class="btn-primary" onclick="trackOrder()">Track Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
